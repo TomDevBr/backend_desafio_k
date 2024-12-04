@@ -1,8 +1,11 @@
 package com.desafio_k.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class RepositoryModel {
-    public class Repository {
+    public static class Repository {
         private String name;
+        @JsonProperty("html_url")
         private String htmlUrl;
         private String description;
 
