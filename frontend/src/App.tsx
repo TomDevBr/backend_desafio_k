@@ -1,5 +1,6 @@
 
 import { useState } from "react"
+import UserProfile from "./userProfile/UserProfile";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           onChange={handleChange}
         />
         <button type="button" onClick={handleClick}>Pesquisar</button>
+        <UserProfile searchedUser={search} />
 
       </div>
 
