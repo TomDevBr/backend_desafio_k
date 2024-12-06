@@ -1,7 +1,6 @@
 
 import { useState } from "react"
-import UserProfile from "./components/userProfile/UserProfile";
-import UserRepositories from "./components/userRepositories/UserRepositories";
+import UserProfile from "./userProfile/UserProfile";
 
 
 function App() {
@@ -16,7 +15,7 @@ function App() {
 
   const handleClick = () => {
     setUserName(inputValue)
-
+    console.log(search)
   }
 
   return (
@@ -31,7 +30,6 @@ function App() {
         />
         <button type="button" onClick={handleClick}>Pesquisar</button>
         <UserProfile searchedUser={search} />
-        <UserRepositories searchedUser={search} />
 
       </div>
 
