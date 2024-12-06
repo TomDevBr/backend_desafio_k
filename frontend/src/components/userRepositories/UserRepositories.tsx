@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { IUserRepositories } from "../../interfaces/IUserRepositories";
 import { getUserRepositories } from "../../api/Api";
+import styles from './UserRepositories.module.css'
 
 function UserRepositories({ searchedUser }: { searchedUser: string }) {
     const [repositories, setRepositories] = useState<IUserRepositories[]>([])
@@ -33,13 +34,18 @@ function UserRepositories({ searchedUser }: { searchedUser: string }) {
     if (loading && searchedUser !== '') {
         return <p>Carregando...</p>;
     }
-    return <div>{repositories.map(repository => (
-        <ul>
-            <li key={repository.html_url}>
-                <a href={repository.html_url}>{repository.name}</a>
+    return <div className={styles.repositoriesContainer}>{repositories.map(repository => (
+
+        <ul key={repository.html_url}>
+            <li>
+                <a href={repository.html_url}>
+                    {repository.name}
+                </a>
                 <p>{repository.description}</p>
             </li>
+            <hr />
         </ul>
+
     ))}</div>
 
 

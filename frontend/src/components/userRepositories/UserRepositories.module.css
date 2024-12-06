@@ -1,0 +1,60 @@
+.repositoriesContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 31.25rem;
+
+    padding: var(----spacing-medium);
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        gap: 1rem;
+
+        li{
+            text-align: center;
+            a{
+                text-decoration: none; 
+                color: inherit; 
+
+                font-family: var(--font-primary);
+                font-size: 2rem;
+
+                &:hover{
+                    color: var(--purple-medium-color)
+                }
+            }
+
+            p{
+                text-align: center;
+                color: var(--text-color);
+            }
+        }
+        
+        hr{
+            height: 1px;       
+            
+            border-color: var(--secondary-text-color);
+            margin: 20px 0;   
+            width: 18.75rem;       
+        }
+    }
+}
+
+
+@media (min-width: 481px) {
+    .repositoriesContainer {
+       ul{
+        hr{
+            width: 31.25rem;    
+        }
+       }
+    }
+}
+
+
