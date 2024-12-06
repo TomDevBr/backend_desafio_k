@@ -1,6 +1,7 @@
 :root {
     --title-color: #99db49;
     --text-color: #069e8c;
+    --secondary-text-color: #ffff;
     --background-color: #211d19;
     --gray-medium-color: #575048;
     --purple-medium-color: #9e064a;
@@ -8,7 +9,6 @@
     --font-primary: 'Roboto', sans-serif;
     --font-secondary: 'Open Sans', sans-serif;
 
-    --border-radius: .25rem;
     --spacing-small: .5rem;
     --spacing-medium: 1rem;
     --spacing-large: 1.5rem;
@@ -23,8 +23,8 @@
 }
 
 
-body {
-   
+html, body {
+
     background-color: var(--background-color);
     color: var(--title-color);
     line-height: 1.6;

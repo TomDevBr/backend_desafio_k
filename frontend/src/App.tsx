@@ -27,8 +27,9 @@ function App() {
           type="text"
           value={inputValue}
           onChange={handleChange}
+          className={styles.inputSearch}
         />
-        <button type="button" onClick={handleClick}>Pesquisar</button>
+        <button className={styles.buttonSearch} type="button" onClick={handleClick}>Pesquisar</button>
         <UserProfile searchedUser={search} />
         <UserRepositories searchedUser={search} />
 
