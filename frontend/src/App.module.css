@@ -49,17 +49,25 @@
 
 @media (min-width: 769px) {
     .container {
-        .inputSearch{}
+        .inputSearch{
+            width: 40%;
+        }
         
-        .buttonSearch{}
+        .buttonSearch{
+            width: 20%;
+        }
     }
 }
 
 
 @media (min-width: 1025px) {
     .container {
-        .inputSearch{}
+        .inputSearch{
+            width: 25%;
+        }
         
-        .buttonSearch{}
+        .buttonSearch{
+            width: 15%;
+        }
     }
 }
