@@ -1,0 +1,40 @@
+:root {
+    --title-color: #99db49;
+    --text-color: #069e8c;
+    --background-color: #211d19;
+    --gray-medium-color: #575048;
+    --purple-medium-color: #9e064a;
+
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+
+    --border-radius: .25rem;
+    --spacing-small: .5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 1.5rem;
+
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+   
+    background-color: var(--background-color);
+    color: var(--title-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    margin-bottom: var(--spacing-medium);
+}
+
+p {
+    --font-secondary: 'Open Sans', sans-serif;   
+}

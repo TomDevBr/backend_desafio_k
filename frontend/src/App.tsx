@@ -1,7 +1,7 @@
-
 import { useState } from "react"
 import UserProfile from "./components/userProfile/UserProfile";
 import UserRepositories from "./components/userRepositories/UserRepositories";
+import styles from "./App.module.css"
 
 
 function App() {
@@ -22,8 +22,7 @@ function App() {
   return (
     <>
 
-      <div>
-        <h1>Hellow world</h1>
+      <div className={styles.container}>
         <input
           type="text"
           value={inputValue}
