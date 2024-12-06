@@ -50,7 +50,10 @@ function UserProfile({ searchedUser }: { searchedUser: string }) {
         <>
             {user && user.avatar_url && (
                 <div className={styles.userContainer}>
-                    <img src={user.avatar_url} className={styles.avatarImage} alt="Image Profile" />
+                    <div className={styles.avatarImageContainer}>
+                        <img src={user.avatar_url} className={styles.avatarImage}
+                            alt="Image Profile" />
+                    </div>
                     <p>{user.login}</p>
                     <h1>{user.name}</h1>
                 </div>
