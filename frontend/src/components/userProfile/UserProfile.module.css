@@ -28,5 +28,32 @@
 
     p{
         text-align: center;
+    }   
+}
+
+.reposContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .buttonShow{
+        width: 50%;
+        margin-bottom: var(--spacing-large);
+        cursor: pointer;
     }
 }
+
+
+
+@media (min-width: 481px) {
+    .reposContainer{
+         .buttonShow{
+            width: 30%;
+        }
+    }
+       
+    
+}
+
+

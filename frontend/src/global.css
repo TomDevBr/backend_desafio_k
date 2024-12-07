@@ -38,3 +38,18 @@ h1, h2, h3, h4, h5, h6 {
 p {
     --font-secondary: 'Open Sans', sans-serif;   
 }
+
+button{
+    padding: var(--spacing-small);
+        
+    border-radius: 1rem;
+    border: none;
+    background: var(--purple-medium-color);
+    color: var(--secondary-text-color);
+
+    &:hover{
+        background-color: #6b0533;
+    }
+
+    cursor: pointer;
+}

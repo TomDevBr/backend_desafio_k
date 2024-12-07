@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 const api = axios.create({
     baseURL: import.meta.env.VITE_BACKEND_API_URL,
 });
@@ -18,9 +19,14 @@ export const getUser = async (username: string) => {
     }
 };
 
-export const getUserRepositories = async (username: string) => {
-    const response = await api.get(`/users/${username}/repos`);
-    return response.data;
+export const getUserRepositories = async (username: string, perPage: number, page: number): Promise<Response> => {
+    const response = await fetch(
+        `/users/${username}/repos?per_page=${perPage}&page=${page}`
+    );
+    if (!response.ok) {
+        throw new Error('Erro ao buscar repositórios');
+    }
+    return response;
 };
 
 export default api;

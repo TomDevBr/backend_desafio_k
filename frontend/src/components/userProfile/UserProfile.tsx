@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import styles from './UserProfile.module.css'
 import { getUser } from "../../api/Api";
 import { IUserProfile } from "../../interfaces/IUserProfile";
-
-
+import UserRepositories from "../userRepositories/UserRepositories";
 
 
 function UserProfile({ searchedUser }: { searchedUser: string }) {
+    const [showRepositories, setShowRepositories] = useState(false)
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const [user, setUser] = useState<IUserProfile>({
@@ -16,6 +16,10 @@ function UserProfile({ searchedUser }: { searchedUser: string }) {
         login: '',
         name: ''
     });
+
+    const handleShowRepositories = () => {
+        setShowRepositories(prevState => !prevState)
+    }
 
 
     useEffect(() => {
@@ -39,23 +43,32 @@ function UserProfile({ searchedUser }: { searchedUser: string }) {
     }, [searchedUser]);
 
     if (error) {
-        return <p>Erro ao buscar dados</p>
+        return <div role="alert">Erro ao buscar dados: {error}</div>;
     }
-
     if (loading && searchedUser !== '') {
-        return <p>Carregando...</p>;
+        return <div aria-busy="true">Carregando...</div>;
     }
 
     return (
         <>
             {user && user.avatar_url && (
-                <div className={styles.userContainer}>
-                    <div className={styles.avatarImageContainer}>
-                        <img src={user.avatar_url} className={styles.avatarImage}
-                            alt="Image Profile" />
+                <div>
+                    <div className={styles.userContainer}>
+                        <div className={styles.avatarImageContainer}>
+                            <img src={user.avatar_url} className={styles.avatarImage}
+                                alt="Image Profile" />
+                        </div>
+                        <p>{user.login}</p>
+                        <h1>{user.name}</h1>
                     </div>
-                    <p>{user.login}</p>
-                    <h1>{user.name}</h1>
+                    <div className={styles.reposContainer}>
+                        <button className={styles.buttonShow}
+                            onClick={handleShowRepositories}>
+                            {showRepositories ? 'Esconder Repositórios' : 'Ver Repositórios'}
+                        </button>
+                        {showRepositories ? <UserRepositories searchedUser={user.login} /> : null}
+
+                    </div>
                 </div>
             )}
         </>

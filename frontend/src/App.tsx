@@ -1,12 +1,12 @@
 import { useState } from "react"
 import UserProfile from "./components/userProfile/UserProfile";
-import UserRepositories from "./components/userRepositories/UserRepositories";
 import styles from "./App.module.css"
 
 
 function App() {
   const [inputValue, setInputValue] = useState<string>('')
   const [search, setUserName] = useState<string>('')
+
 
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,6 +18,8 @@ function App() {
     setUserName(inputValue)
 
   }
+
+
 
   return (
     <>
@@ -31,7 +33,9 @@ function App() {
         />
         <button className={styles.buttonSearch} type="button" onClick={handleClick}>Pesquisar</button>
         <UserProfile searchedUser={search} />
-        <UserRepositories searchedUser={search} />
+
+
+
 
       </div>
 

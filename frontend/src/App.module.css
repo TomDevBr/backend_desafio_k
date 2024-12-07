@@ -24,12 +24,9 @@
 
     .buttonSearch{
         width: 50%;
-        padding: var(--spacing-small);
-        
-        border-radius: 1rem;
-        border: none;
-        background: var(--purple-medium-color);
-        color: var(--secondary-text-color);
+        cursor: pointer;
+
+      
     }
 }
 
