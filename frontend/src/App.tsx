@@ -5,8 +5,8 @@ import styles from "./App.module.css"
 
 function App() {
   const [inputValue, setInputValue] = useState<string>('')
-  const [search, setUserName] = useState<string>('')
-
+  const [search, setSearch] = useState<string>('')
+  const [active, setActive] = useState(false)
 
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -15,9 +15,15 @@ function App() {
   };
 
   const handleClick = () => {
-    setUserName(inputValue)
+    if (inputValue.trim() === "") {
+      setActive(true);
+    } else {
+      setActive(false);
+      setSearch(inputValue.trim());
+    }
+  };
 
-  }
+
 
 
 
@@ -30,9 +36,12 @@ function App() {
           value={inputValue}
           onChange={handleChange}
           className={styles.inputSearch}
+          placeholder="Digite o login do usuário do GitHub"
         />
         <button className={styles.buttonSearch} type="button" onClick={handleClick}>Pesquisar</button>
         <UserProfile searchedUser={search} />
+        {active ? <p role="alert">Digite o login de um usuário válido</p> : null}
+
 
 
 
