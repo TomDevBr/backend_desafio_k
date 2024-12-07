@@ -2,6 +2,7 @@ package com.desafio_k.backend.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.desafio_k.backend.model.RepositoryModel.Repository;
@@ -25,7 +26,10 @@ public class GitHubApiController {
     }
 
     @GetMapping("/users/{name}/repos")
-    public List<Repository> getUserRepositories(@PathVariable String name) {
-        return userService.getRepositories(name);
+    public List<Repository> getUserRepositories(
+            @PathVariable String name,
+            @RequestParam(defaultValue = "5") int perPage,
+            @RequestParam(defaultValue = "1") int page) {
+        return userService.getRepositories(name, perPage, page);
     }
 }

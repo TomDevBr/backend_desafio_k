@@ -25,8 +25,8 @@ public class GitHubApiService {
 
     }
 
-    public List<Repository> getRepositories(String name) {
-        String url = String.format("%s/users/%s/repos", baseUrl, name);
+    public List<Repository> getRepositories(String name, int perPage, int page) {
+        String url = String.format("%s/users/%s/repos?per_page=%d&page=%d", baseUrl, name, perPage, page);
         Repository[] repositories = restTemplate.getForObject(url, Repository[].class);
         return Arrays.asList(repositories);
     }
