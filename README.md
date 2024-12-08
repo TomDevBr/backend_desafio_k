@@ -49,13 +49,13 @@ Navegue até a pasta do back-end:
 
 cd backend
 ```
--**Instale as dependências utilizando o Maven:**
+- **Instale as dependências utilizando o Maven:**
 ```bash
 
 mvn clean install
 ```
 
--**Rodar a aplicação:**
+- **Rodar a aplicação:**
 ```bash
 
 mvn spring-boot:run
@@ -63,7 +63,7 @@ mvn spring-boot:run
 O back-end será executado na porta 8080 por padrão, verifique se seu backend está rodando na porta correta.
 
 
--**Configuração de CORS:** 
+- **Configuração de CORS:** 
 O back-end foi configurado para permitir requisições apenas do front-end, localizado em http://127.0.0.1:5173. Adicione o link correto do seu frontend local, sso é feito no arquivo de configuração CorsConfig.java:
 
 ```java
@@ -94,13 +94,13 @@ Navegue até a pasta do front-end:
 cd frontend
 ```
 
--**Instale as dependências utilizando o yarn:**
+- **Instale as dependências utilizando o yarn:**
 ```bash
 
 yarn add
 ```
 
--**Crie um arqui .env**
+- **Crie um arqui .env**
 na raiz do projeto front-end com as variáveis de ambiente necessárias 
 para o back-end e a API do GitHub. Exemplo de configuração do arquivo .env
 
