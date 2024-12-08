@@ -64,26 +64,26 @@ O back-end será executado na porta 8080 por padrão, verifique se seu backend e
 
 
 - **Configuração de CORS:** 
-O back-end foi configurado para permitir requisições apenas do front-end, localizado em http://127.0.0.1:5173. Adicione o link correto do seu frontend local, sso é feito no arquivo de configuração CorsConfig.java:
 
-```java
+1. **Localização do arquivo de configuração:**
+   - O arquivo de configuração do Spring Boot pode ser encontrado em `src/main/resources/application.properties`.
 
-@Configuration
-public class CorsConfig {
+2. **Variável de configuração CORS:**
+   - A variável `cors.allowedOrigins` define as origens (URLs) permitidas para fazer requisições para a API do backend.
+   - A configuração padrão está assim:
+     ```properties
+     cors.allowedOrigins=http://localhost:5173
+     ```
+     Isso significa que a API está configurada para permitir requisições apenas do endereço `http://localhost:5173`, que é o endereço padrão do frontend em um ambiente de desenvolvimento com Vite.
 
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedOrigins("http://127.0.0.1:5173")
-                        .allowedMethods("GET");  
-            }
-        };
-    }
-}        
-```
+3. **Alterando a URL de origem:**
+   - Se você estiver rodando o frontend em um ambiente diferente (como uma porta diferente ou em um domínio), será necessário alterar o valor de `cors.allowedOrigins`.
+   - Exemplo:
+     ```properties
+     cors.allowedOrigins=http://127.0.0.1:3000
+     ```
+     Substitua `http://127.0.0.1:3000` pela URL correta do seu frontend.
+
 
 ### 3. Configuração do front-end
 
