@@ -110,7 +110,7 @@ VITE_BACKEND_API_URL=http://localhost:8080
 VITE_GITHUB_TOKEN=seuTokenGitHub  
 ```
 
---**Rodar aplicação**
+-- **Rodar aplicação**
 
 ```bash
 
@@ -153,8 +153,8 @@ yarn dev
 ### 2. **GET /users/{username}/repos**
 - **Descrição**:  Retorna os repositórios públicos de um usuário do GitHub, com suporte à paginação
 - **Parâmetros**: 
-    -**perPage**: Número de repositórios por página (padrão: 5).
-    -**page**: Página atual para os repositórios (padrão: 1).
+    - **perPage**: Número de repositórios por página (padrão: 5).
+    - **page**: Página atual para os repositórios (padrão: 1).
 
 **Exemplo de Resposta**:
 ```json
@@ -173,7 +173,7 @@ yarn dev
 ```
 
 ### 3. **GET /users/{username}/repos/count**
-- **Descrição**: RRetorna o número total de repositórios públicos de um usuário do GitHub.
+- **Descrição**: Retorna o número total de repositórios públicos de um usuário do GitHub.
 
 **Exemplo de Resposta**:
 ```json
