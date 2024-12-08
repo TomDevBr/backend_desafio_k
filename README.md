@@ -94,7 +94,7 @@ Navegue até a pasta do front-end:
 cd frontend
 ```
 
--**Instale as dependências utilizando o Maven:**
+-**Instale as dependências utilizando o yarn:**
 ```bash
 
 yarn add
