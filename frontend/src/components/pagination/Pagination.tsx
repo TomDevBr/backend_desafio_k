@@ -1,5 +1,5 @@
-import { IPagination } from '../interfaces/IPagination';
-
+import { IPagination } from '../../interfaces/IPagination';
+import styles from './Pagination.module.css'
 
 const Pagination = ({ currentPage, totalPages, onPageChange }: IPagination) => {
     const handleClick = (page: number) => {
@@ -9,15 +9,15 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: IPagination) => {
     };
 
     return (
-        <div style={{ marginTop: '20px' }}>
+        <div className={styles.containerPagination} >
             <button
                 onClick={() => handleClick(currentPage - 1)}
                 disabled={currentPage === 1}
             >
                 Voltar
             </button>
-            <span style={{ margin: '0 10px' }}>
-                {currentPage} de {totalPages}
+            <span>
+                Página {currentPage} de {totalPages}
             </span>
             <button
                 onClick={() => handleClick(currentPage + 1)}

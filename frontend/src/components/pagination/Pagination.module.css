@@ -1,0 +1,8 @@
+.containerPagination{
+    margin-top: var(--spacing-large); 
+    text-align: center;
+
+    span{
+        margin: 0 var(--spacing-small);
+    }
+}

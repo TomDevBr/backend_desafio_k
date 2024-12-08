@@ -9,6 +9,8 @@ public class UserModel {
         private String name;
         @JsonProperty("avatar_url")
         private String avatarUrl;
+        @JsonProperty("public_repos")
+        private int publicRepos;
 
         public String getAvatarUrl() {
             return avatarUrl;
@@ -32,6 +34,14 @@ public class UserModel {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        public int getPublicRepos() {
+            return publicRepos;
+        }
+
+        public void setPublicRepos(int publicRepos) {
+            this.publicRepos = publicRepos;
         }
     }
 }

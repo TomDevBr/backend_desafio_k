@@ -1,7 +1,13 @@
 import axios from "axios";
+import { IRepositoryResponse } from "../interfaces/IUserRepositories";
 
 const api = axios.create({
     baseURL: import.meta.env.VITE_BACKEND_API_URL,
+    headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`
+    }
+
 });
 
 export const getUser = async (username: string) => {
@@ -18,15 +24,29 @@ export const getUser = async (username: string) => {
     }
 };
 
-export const getUserRepositories = async (username: string, perPage: number, page: number): Promise<Response> => {
-    const response = await api.get(
-        `/users/${username}/repos?per_page=${perPage}&page=${page}`
-    );
-    if (!response) {
-        throw new Error('Erro ao buscar repositórios');
+export const getUserRepositories = async (
+    username: string,
+    perPage: number,
+    page: number
+): Promise<IRepositoryResponse> => {
+    try {
+        const response = await axios.get(`/users/${username}/repos`, {
+            params: { perPage, page },
+        });;
+
+
+        const countResponse = await axios.get(`/users/${username}/repos/count`);
+        const totalItems = countResponse.data;
+        const totalPages = Math.ceil(totalItems / perPage);
+
+        return {
+            repositories: response.data,
+            totalItems,
+            totalPages,
+        };
+    } catch (error) {
+        console.error('Erro ao buscar repositórios:', error);
+        throw error;
     }
-
-    return response.data;
 };
-
 export default api;

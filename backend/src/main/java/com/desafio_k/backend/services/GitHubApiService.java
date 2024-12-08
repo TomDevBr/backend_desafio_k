@@ -1,9 +1,11 @@
 package com.desafio_k.backend.services;
 
 import org.springframework.stereotype.Service;
+
 import org.springframework.web.client.RestTemplate;
 
-import com.desafio_k.backend.model.RepositoryModel.Repository;
+import com.desafio_k.backend.model.RepositoryModel;
+import com.desafio_k.backend.model.UserModel;
 import com.desafio_k.backend.model.UserModel.User;
 
 import java.util.Arrays;
@@ -25,9 +27,16 @@ public class GitHubApiService {
 
     }
 
-    public List<Repository> getRepositories(String name, int perPage, int page) {
+    public List<RepositoryModel.Repository> getRepositories(String name, int perPage, int page) {
         String url = String.format("%s/users/%s/repos?per_page=%d&page=%d", baseUrl, name, perPage, page);
-        Repository[] repositories = restTemplate.getForObject(url, Repository[].class);
+        RepositoryModel.Repository[] repositories = restTemplate.getForObject(url, RepositoryModel.Repository[].class);
         return Arrays.asList(repositories);
     }
+
+    public int getTotalRepositoryCount(String name) {
+        String url = String.format("%s/users/%s", baseUrl, name);
+        UserModel.User user = restTemplate.getForObject(url, UserModel.User.class);
+        return user != null ? user.getPublicRepos() : 0;
+    }
+
 }
