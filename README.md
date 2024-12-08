@@ -110,7 +110,7 @@ VITE_BACKEND_API_URL=http://localhost:8080
 VITE_GITHUB_TOKEN=seuTokenGitHub  
 ```
 
--- **Rodar aplicação**
+- **Rodar aplicação**
 
 ```bash
 
