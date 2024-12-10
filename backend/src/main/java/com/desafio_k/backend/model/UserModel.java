@@ -12,6 +12,12 @@ public class UserModel {
         @JsonProperty("public_repos")
         private int publicRepos;
 
+        public User(String login, String name, String avataUrl) {
+            this.login = login;
+            this.name = name;
+            this.avatarUrl = avataUrl;
+        }
+
         public String getAvatarUrl() {
             return avatarUrl;
         }

@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.desafio_k.backend.model.RepositoryModel;
-import com.desafio_k.backend.model.UserModel;
 import com.desafio_k.backend.model.UserModel.User;
 import com.desafio_k.backend.services.GitHubApiService;
 

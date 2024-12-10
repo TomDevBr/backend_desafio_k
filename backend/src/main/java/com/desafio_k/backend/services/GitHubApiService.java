@@ -1,5 +1,6 @@
 package com.desafio_k.backend.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import org.springframework.web.client.RestTemplate;
@@ -14,7 +15,8 @@ import java.util.List;
 @Service
 public class GitHubApiService {
 
-    private final RestTemplate restTemplate;
+    private RestTemplate restTemplate;
+
     private final String baseUrl = "https://api.github.com";
 
     public GitHubApiService(RestTemplate restTemplate) {
