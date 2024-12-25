@@ -35,7 +35,7 @@ A aplicação também oferece paginação para exibir os repositórios de forma 
 ### 1. Clonar o Repositório
 
 ```bash
-git clone https://github.com/SeuUsuario/gitHubUserRepositories.git
+git clone https://github.com/TomDevBr/desafio_k.git
 
 ```
 
