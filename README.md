@@ -133,8 +133,6 @@ yarn dev
 - **api/**: Essa pasta contém o arquivo de configuração do consumo da API e seus endpoints.
 - **components/**: Nesta pasta estão localizados os componentes utilizados para a renderização e exibição dos dados recebidos da API.
 - **interfaces/**: Essa pasta contém as interfaces dos componentes e dados da aplicação.
-    Componente de Paginação: Permite ao usuário navegar pelas páginas de repositórios.
-    Endpoints da API
 
 ## Endpoints da API
 
